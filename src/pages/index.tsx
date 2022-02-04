@@ -36,6 +36,9 @@ export default function Home(props: HomeServerSideProps) {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const genre = context.query.genre;
-  
+  if (!genre) {
+    return await moviesResolvers("fetchTrending");
+  }
+
   return await moviesResolvers(genre);
 };
