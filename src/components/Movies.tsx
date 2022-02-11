@@ -45,7 +45,7 @@ const Movies: React.FC<MoviesProps> = (props: MoviesProps) => {
       dataLength={movies.length}
       next={fetchMovies}
       hasMore={props.moviesRes?.page < props.moviesRes?.total_pages}
-      loader={<h3 className="w-100 text-center">Loading...</h3>}
+      loader={<h3 className="w-auto text-center">Loading...</h3>}
       endMessage={<h4>Nothing more to show</h4>}
     >
       <div className="my-10 flex-wrap justify-center px-5 sm:grid md:grid-cols-2 xl:grid-cols-3 3xl:flex">
