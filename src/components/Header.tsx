@@ -9,6 +9,7 @@ import {
   SearchIcon,
   UserIcon,
 } from "@heroicons/react/outline";
+import Tilt from "react-parallax-tilt";
 
 interface HeaderProps {}
 
@@ -23,12 +24,22 @@ const Header: React.FC<HeaderProps> = ({}) => {
         <HeaderItem title="SEARCH" Icon={SearchIcon} />
         <HeaderItem title="ACCOUNT" Icon={UserIcon} />
       </div>
-      <Image
-        className="object-contain"
-        src="https://links.papareact.com/ua6"
-        width={200}
-        height={100}
-      />
+      <Tilt
+        glareBorderRadius="20px"
+        scale={1.05}
+        tiltAxis="y"
+        glareEnable={true}
+        glareMaxOpacity={0.8}
+        glareColor="white"
+        glarePosition="bottom"
+      >
+        <Image
+          className="object-contain"
+          src="https://links.papareact.com/ua6"
+          width={200}
+          height={100}
+        />
+      </Tilt>
     </header>
   );
 };

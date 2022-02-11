@@ -1,16 +1,17 @@
 import { useRouter } from "next/router";
 import React from "react";
-import { movies } from "../utils/movies";
+import { moviesDictionary } from "../utils/moviesDictionary";
 
 interface NavProps {}
 
 const Nav: React.FC<NavProps> = ({}) => {
-    const router = useRouter();
+  const router = useRouter();
+
   return (
     <nav className="relative">
       {/* looping thought array or list, need to give the elements a key for react to re-render */}
       <div className="flex space-x-10 overflow-x-scroll whitespace-nowrap px-10 text-2xl scrollbar-hide sm:space-x-20 sm:px-20">
-        {Object.entries(movies).map(([key, { title, url }]) => (
+        {Object.entries(moviesDictionary).map(([key, { title, url }]) => (
           <h3
             key={key}
             onClick={() => router.push(`/?genre=${key}`)}
@@ -21,7 +22,7 @@ const Nav: React.FC<NavProps> = ({}) => {
         ))}
       </div>
 
-      <div className="absolute top-0 right-0 bg-gradient-to-l from-[#06202A] h-10 w-1/12" />
+      <div className="absolute top-0 right-0 h-10 w-1/12 bg-gradient-to-l from-[#06202A]" />
     </nav>
   );
 };

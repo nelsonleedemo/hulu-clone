@@ -23,7 +23,7 @@ type MoviesRequest = {
   [key: string]: MoviesRequestParams
 }
 
-export const movies: MoviesRequest = {
+export const moviesDictionary: MoviesRequest = {
   fetchTrending: {
     title: "Trending",
     url: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
